@@ -1,0 +1,26 @@
+name: Rename Wordle Channel
+
+on:
+  schedule:
+    - cron: "30 12 * * *"  # Every day at 12:30 UTC = 1:30pm Lisbon
+  workflow_dispatch:        # Allows you to trigger it manually too
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        run: python bot.py
