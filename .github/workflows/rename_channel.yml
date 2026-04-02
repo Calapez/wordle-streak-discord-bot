@@ -2,10 +2,7 @@ name: Rename Wordle Channel
 
 on:
   schedule:
-    - cron: "0 1 * * *"    # 2:00 AM Lisbon (1:00 UTC)
-    - cron: "30 6 * * *"   # 7:30 AM Lisbon (1:00 UTC)
-    - cron: "30 12 * * *"  # 13:30 PM Lisbon (12:30 UTC)
-    - cron: "30 15 * * *"  # 16:30 PM Lisbon (12:30 UTC)
+    - cron: "0 * * * *"  # Every hour, on the hour
   workflow_dispatch:        # Allows you to trigger it manually too
 
 jobs:
