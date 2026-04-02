@@ -76,7 +76,7 @@ for msg in messages:
             print(f"❌ Failed to rename: {patch.status_code} {patch.text}")
 
 
-            send_dm("119570344469069824", random.choice(FAIL_MESSAGES), "BrunoP")
+        send_dm("119570344469069824", random.choice(FAIL_MESSAGES), "BrunoP")
 
         break
 else:
