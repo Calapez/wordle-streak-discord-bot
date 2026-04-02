@@ -75,8 +75,13 @@ for msg in messages:
         else:
             print(f"❌ Failed to rename: {patch.status_code} {patch.text}")
 
-
-        send_dm("119570344469069824", random.choice(FAIL_MESSAGES), "BrunoP")
+        failed_match = re.search(r"X/6[^<]*(<@\d+>(?:[^<]*<@\d+>)*)", msg["content"])
+        if failed_match:
+            failed_ids = re.findall(r"<@(\d+)>", failed_match.group(1))
+            mentions_by_id = {u["id"]: u["username"] for u in msg.get("mentions", [])}
+            for user_id in failed_ids:
+                username = mentions_by_id.get(user_id, "unknown")
+                send_dm(user_id, random.choice(FAIL_MESSAGES), username)
 
         break
 else:
