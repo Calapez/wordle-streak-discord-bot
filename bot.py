@@ -61,7 +61,7 @@ def send_dm(user_id, message, username="unknown"):
         print(f"❌ Failed to send DM to {username} ({user_id}): {send.status_code} {send.text}")
 
 for msg in messages:
-    match = re.search(r"on a (\d+) day streak", msg["content"], re.IGNORECASE)
+    match = re.search(r"on an? (\d+) day streak", msg["content"], re.IGNORECASE)
     if match:
         streak = int(match.group(1)) + PREVIOUS_CHANNEL_STREAK
         new_name = f"wordle-{streak}-daystreak"
