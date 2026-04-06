@@ -41,7 +41,7 @@ python bot.py
 
 ## GitHub Actions
 
-The workflow at `.github/workflows/rename_channel.yml` runs `bot.py` hourly (`0 * * * *`) and supports manual dispatch via `workflow_dispatch`.
+The workflow at `.github/workflows/rename_channel.yml` runs `bot.py` daily at 12:30 UTC (1:30 pm Lisbon) and supports manual dispatch via `workflow_dispatch`.
 
 Add `BOT_TOKEN` and `CHANNEL_ID` as repository secrets.
 

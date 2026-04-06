@@ -36,7 +36,7 @@ The entire bot is `bot.py` — a ~150-line script with small helper functions an
 - `BOT_TOKEN` — Discord bot token (needs `MANAGE_CHANNELS` permission)
 - `CHANNEL_ID` — ID of the Discord channel to monitor and rename
 
-**GitHub Actions:** `.github/workflows/rename_channel.yml` runs `bot.py` on a schedule (`0 * * * *`) and supports `workflow_dispatch` for manual runs.
+**GitHub Actions:** `.github/workflows/rename_channel.yml` runs `bot.py` daily at 12:30 UTC (1:30 pm Lisbon) and supports `workflow_dispatch` for manual runs.
 
 ## Key implementation note
 
