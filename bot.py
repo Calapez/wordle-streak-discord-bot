@@ -24,7 +24,7 @@ FAIL_MESSAGES = [
     "Começa a pedir ao ChatGPT para fazer por ti 🤐",
 ]
 
-BOT_TOKEN  = os.environ["BOT_TOKEN"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHANNEL_ID = os.environ["CHANNEL_ID"]
 PREVIOUS_CHANNEL_STREAK = 100 # Delete this logic if the streak ever dies.
 
