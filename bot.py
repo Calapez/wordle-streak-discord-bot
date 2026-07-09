@@ -7,10 +7,6 @@ import requests
 # Configuration
 # ---------------------------------------------------------------------------
 
-# Offset added to the parsed streak to account for history before the bot
-# existed. Delete this constant (and its usage) if the streak ever resets.
-PREVIOUS_CHANNEL_STREAK = 100
-
 FAIL_MESSAGES = [
     "Ei ca burro!",
     "Errrroooooooou!",
@@ -134,7 +130,7 @@ def main() -> None:
         if not match:
             continue
 
-        streak = int(match.group(1)) + PREVIOUS_CHANNEL_STREAK
+        streak = match.group(1)
         print(f"Found streak: {streak} (raw={match.group(1)}, offset={PREVIOUS_CHANNEL_STREAK})")
 
         rename_channel(channel_id, f"wordle-{streak}-daystreak", headers)
