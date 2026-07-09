@@ -131,7 +131,7 @@ def main() -> None:
             continue
 
         streak = match.group(1)
-        print(f"Found streak: {streak} (raw={match.group(1)}, offset={PREVIOUS_CHANNEL_STREAK})")
+        print(f"Found streak: {streak} (raw={match.group(1)})")
 
         rename_channel(channel_id, f"wordle-{streak}-daystreak", headers)
         dm_failed_players(msg, headers)
